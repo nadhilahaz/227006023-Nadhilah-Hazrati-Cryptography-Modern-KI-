@@ -3,8 +3,8 @@ import 'package:encrypt/encrypt.dart' as encrypt;
 
 final ctrlText = TextEditingController();
 final ctrlKey = TextEditingController();
-final ctrlEncryptedText = TextEditingController(); // Tambahan
-final ctrlDecryptedText = TextEditingController(); // Tambahan
+final ctrlEncryptedText = TextEditingController();
+final ctrlDecryptedText = TextEditingController();
 
 var cipherText = 'empty text';
 var plainText = 'empty text';
@@ -81,7 +81,7 @@ class _HomeState extends State<Home> {
                 children: [
                   TextField(
                     controller: ctrlText,
-                    style: const TextStyle(color: Colors.black), // Warna teks hitam
+                    style: const TextStyle(color: Colors.black),
                     decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'Text',
@@ -95,7 +95,7 @@ class _HomeState extends State<Home> {
                   TextField(
                     controller: ctrlKey,
                     maxLength: 32,
-                    style: const TextStyle(color: Colors.black), // Warna teks hitam
+                    style: const TextStyle(color: Colors.black),
                     obscureText: obscureText, // Menyembunyikan teks berdasarkan nilai variabel obscureText
                     obscuringCharacter: '*', // Mengganti teks yang disensor dengan karakter tertentu
                     decoration: InputDecoration(
@@ -105,13 +105,12 @@ class _HomeState extends State<Home> {
                       suffixIcon: IconButton(
                         onPressed: () {
                           setState(() {
-                            // Toggle visibility of the password
                             obscureText = !obscureText;
                           });
                         },
                         icon: Icon(
                           obscureText ? Icons.visibility : Icons.visibility_off,
-                          color: Colors.grey, // Warna ikon mata
+                          color: Colors.grey,
                         ),
                       ),
                     ),
@@ -147,7 +146,7 @@ class _HomeState extends State<Home> {
                   TextField(
                     controller: ctrlEncryptedText,
                     readOnly: true,
-                    style: const TextStyle(color: Colors.black), // Warna teks hitam
+                    style: const TextStyle(color: Colors.black),
                     decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'Hasil Enkripsi',
@@ -158,7 +157,7 @@ class _HomeState extends State<Home> {
                   TextField(
                     controller: ctrlDecryptedText,
                     readOnly: true,
-                    style: const TextStyle(color: Colors.black), // Warna teks hitam
+                    style: const TextStyle(color: Colors.black),
                     decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'Hasil Dekripsi',
